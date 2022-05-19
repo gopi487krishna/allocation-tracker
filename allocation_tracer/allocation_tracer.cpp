@@ -8,7 +8,7 @@
 #include "llvm/ADT/StringRef.h"
 
 #include "SQLiteCpp/SQLiteCpp.h"
-#include "allocation_tracker.hpp"
+#include "allocation_tracer.hpp"
 
 namespace
 {

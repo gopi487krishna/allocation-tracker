@@ -1,23 +1,23 @@
-add_library(AllocationTracker MODULE
+add_library(AllocationTracer MODULE
     # List your source files here.
-    allocation_tracker.cpp
+    allocation_tracer.cpp
 )
 
 
 
 # Use C++11 to compile our pass (i.e., supply -std=c++11).
-target_compile_features(AllocationTracker PRIVATE cxx_range_for cxx_auto_type)
+target_compile_features(AllocationTracer PRIVATE cxx_range_for cxx_auto_type)
 
 # LLVM is (typically) built with no C++ RTTI. We need to match that;
 # otherwise, we'll get linker errors about missing RTTI data.
-set_target_properties(AllocationTracker PROPERTIES
+set_target_properties(AllocationTracer PROPERTIES
     COMPILE_FLAGS "-fno-rtti"
 )
 
 # Get proper shared-library behavior (where symbols are not necessarily
 # resolved when the shared library is linked) on OS X.
 if(APPLE)
-    set_target_properties(AllocationTracker PROPERTIES
+    set_target_properties(AllocationTracer PROPERTIES
         LINK_FLAGS "-undefined dynamic_lookup"
     )
 endif(APPLE)

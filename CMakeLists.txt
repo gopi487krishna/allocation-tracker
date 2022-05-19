@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.1)
-project(AllocationTracker)
+project(AllocationTracer)
 
 # support C++14 features used by LLVM 10.0.0
 set(CMAKE_CXX_STANDARD 14)
@@ -14,4 +14,4 @@ link_directories(${LLVM_LIBRARY_DIRS})
 add_subdirectory(SQLiteCpp)
 include_directories(${PROJECT_SOURCE_DIR}/SQLiteCpp/include)
 
-add_subdirectory(allocation_tracker)
+add_subdirectory(allocation_tracer)
