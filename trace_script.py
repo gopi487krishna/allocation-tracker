@@ -57,8 +57,8 @@ class Trace(gdb.Command):
         return int(gdb.parse_and_eval("sizeof(mem_trace::record)/sizeof(*mem_trace::record)"))
 
     def printRecord(self, trace_record,trace):
-        print("Line Number:\t" + str(trace_record[0]))
-        print("Column Number:\t" + str(trace_record[1]))
+        print("UID:\t" + str(trace_record[0]))
+        print("Line Number:\t" + str(trace_record[1]))
         print("Filename:\t" + trace_record[2])
         print("Directory:\t" + trace_record[3])
         print("StartAddress:\t" + str(trace['m_startaddress']))
