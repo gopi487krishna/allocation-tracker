@@ -12,4 +12,6 @@ link_directories(${LLVM_LIBRARY_DIRS})
 
 
 add_subdirectory(SQLiteCpp)
+include_directories(${PROJECT_SOURCE_DIR}/SQLiteCpp/include)
+
 add_subdirectory(allocation_tracker)
